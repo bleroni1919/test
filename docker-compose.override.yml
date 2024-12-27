@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  webserver:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./dags:/usr/local/airflow/dags
+      - ./requirements.txt:/usr/local/airflow/requirements.txt

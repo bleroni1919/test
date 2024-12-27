@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  webserver:
+    image: quay.io/astronomer/astro-runtime:12.6.0
+    container_name: airflow_webserver
+    environment:
+      - LOAD_EXAMPLES=False
+    volumes:
+      - ./dags:/usr/local/airflow/dags
+      - ./requirements.txt:/usr/local/airflow/requirements.txt
+    command: >
+      bash -c "
+      pip install --no-cache-dir -r /usr/local/airflow/requirements.txt &&
+      airflow webserver"
+    ports:
+      - "8080:8080"

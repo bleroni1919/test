@@ -9,10 +9,10 @@ with raw_data as (
 cleaned_data as (
   select
     INITCAP(Name) as patient_name,
-    Age,
+    Age as age,
     case
-      when Age <= 12 then 'Child'
-      when Age between 13 and 59 then 'Adult'
+      when age <= 12 then 'Child'
+      when age between 13 and 59 then 'Adult'
       else 'Senior'
     end as age_group,
     Gender as gender,

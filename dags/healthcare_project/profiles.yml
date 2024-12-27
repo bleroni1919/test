@@ -1,0 +1,11 @@
+healthcare_project:
+  outputs:
+    dev:
+      catalog: null
+      host: adb-2798089330046265.5.azuredatabricks.net
+      http_path: sql/protocolv1/o/2798089330046265/1211-161555-y49g889p
+      schema: default
+      threads: 1
+      token: dapi84490c35fcd4bbf5d2c4378ecb23520c-3
+      type: databricks
+  target: dev

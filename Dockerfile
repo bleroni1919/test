@@ -7,5 +7,5 @@ WORKDIR /usr/local/airflow
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy DAGs
+# Copy dbt project and DAGs
 COPY dags/ /usr/local/airflow/dags/

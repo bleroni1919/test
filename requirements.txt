@@ -1,0 +1,14 @@
+apache-airflow-providers-common-sql>=1.3.0
+
+# library
+requests>=2.27,<3
+
+# databricks sql connector
+databricks-sql-connector>=2.0.0,<3.0.0
+
+# databricks SDK
+databricks-sdk==0.1.6
+
+# dbt
+dbt-core==1.5.0
+dbt-databricks==1.5.0

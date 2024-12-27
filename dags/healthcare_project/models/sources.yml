@@ -1,0 +1,7 @@
+version: 2
+
+sources:
+  - name: bronze
+    schema: default
+    tables:
+      - name: bronze_healthcare_data

@@ -23,15 +23,15 @@ cleaned_data as (
     month(Date_of_Admission) as admission_month,
     Discharge_Date as discharge_date,
     datediff(Discharge_Date, Date_of_Admission) as length_of_stay,
-    Doctor,
-    Hospital,
-    Insurance_Provider,
-    Billing_Amount,
+    Doctor as doctor_name,
+    Hospital as hospital_name,
+    Insurance_Provider as insurance_provider,
+    Billing_Amount as billing_amount,
     avg(Billing_Amount) over() as avg_billing_amount,
-    Room_Number,
-    Admission_Type,
-    Medication,
-    Test_Results
+    Room_Number as room_number,
+    Admission_Type as admission,
+    Medication as medication,
+    Test_Results as test_results
   from raw_data
 ),
 unique_medication_count as (

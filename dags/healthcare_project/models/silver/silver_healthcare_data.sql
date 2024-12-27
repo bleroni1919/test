@@ -16,7 +16,7 @@ cleaned_data as (
       else 'Senior'
     end as age_group,
     Gender as gender,
-    Blood_Type,
+    Blood_Type as blood_type,
     Medical_Condition as diagnosis,
     Date_of_Admission as date_of_admission,
     year(Date_of_Admission) as admission_year,

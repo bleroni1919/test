@@ -11,10 +11,17 @@ diagnosis_summary as (
     diagnosis,
     avg(length_of_stay) as avg_length_of_stay,
     count(patient_name) as patient_count,
-    avg(Billing_Amount) as avg_billing_amount,
-    count(distinct Hospital) as unique_hospitals
+    avg(billing_amount) as avg_billing_amount,
+    count(distinct hospital_name) as unique_hospitals,
+    first_value(hospital_name) over (partition by diagnosis order by count(*) desc) as most_common_hospital
   from silver_data
-  group by diagnosis
+  group by diagnosis, hospital_name
 )
-select *
+select
+  diagnosis,
+  avg_length_of_stay,
+  patient_count,
+  avg_billing_amount,
+  most_common_hospital
 from diagnosis_summary
+group by diagnosis, avg_length_of_stay, patient_count, avg_billing_amount, most_common_hospital
